@@ -2,10 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TodoForm from './TodoForm';
 import { editTodo, removeTodo } from '../actions/todo';
+import Button from '@material-ui/core/Button';
+
 
 const EditTodo = (props) => {
     return (
         <div>
+            <h1> Edit Todo </h1>
             <TodoForm
              todo={props.todo}
              onSubmit={(todo) => {
@@ -14,10 +17,10 @@ const EditTodo = (props) => {
                 console.log('updated',todo);
              }}
             />
-            <button onClick={() => {
+            <Button variant="raised" color="secondary" onClick={() => {
             props.dispatch(removeTodo({ id: props.todo.id }));
             props.history.push('/');   
-        }}>Remove</button>
+        }}>Remove</Button>
         </div>
     );
 };

@@ -1,4 +1,7 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 export default class TodoForm extends React.Component {
     constructor(props) {
@@ -33,24 +36,27 @@ export default class TodoForm extends React.Component {
     }
     render() {
         return (
-         <div>
+         
+         <div class="container">
+        <Paper>
           {this.state.error && <p>{this.state.error}</p>}
           <form onSubmit={this.onSubmit}>
-           <input
-            type="text"
-            placeholder="description"
+          <TextField
+            label="Description"
             autoFocus
             value={this.state.description}
             onChange={this.onDescriptionChange}
             />
-            <textarea
-             placeholder="note for stuff"
+            <TextField
+             label="Notes"
              value={this.state.note}
              onChange={this.onNoteChange}
-            >
-            </textarea>
-            <button>Save</button>
+            />
+            <Button type="submit" variant="raised" size="small">
+            Save
+            </Button>
            </form>
+         </Paper>
          </div>
         )
     }

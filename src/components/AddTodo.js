@@ -7,7 +7,7 @@ import { addTodo } from '../actions/todo';
 
 const AddTodo = (props) => (
     <div>
-        <h1> Add Todo </h1>
+        <h1 className="center"> Add Todo </h1>
         <TodoForm 
          onSubmit={(todo) => {
              props.dispatch(addTodo(todo));

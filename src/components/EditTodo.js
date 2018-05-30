@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 const EditTodo = (props) => {
     return (
         <div>
-            <h1> Edit Todo </h1>
+            <h1 className="center"> Edit Todo </h1>
             <TodoForm
              todo={props.todo}
              onSubmit={(todo) => {
@@ -17,7 +17,7 @@ const EditTodo = (props) => {
                 console.log('updated',todo);
              }}
             />
-            <Button variant="raised" color="secondary" onClick={() => {
+            <Button className="left-margin" variant="raised" color="secondary" onClick={() => {
             props.dispatch(removeTodo({ id: props.todo.id }));
             props.history.push('/');   
         }}>Remove</Button>

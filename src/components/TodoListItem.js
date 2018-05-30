@@ -5,8 +5,8 @@ import Typography from '@material-ui/core/Typography';
 
 const TodoListItem = ({ id, description, note }) => {
     return (
-        <div className="container">
-        <Paper container elevation={4}>
+        <div className="container center">
+        <Paper elevation={4}>
         <Typography variant="headline">
         <Link to={`/edit/${id}`}>
             <h3>{description}</h3>

@@ -38,7 +38,7 @@ export default class TodoForm extends React.Component {
         return (
          
          <div class="container">
-        <Paper>
+        <Paper className="padding">
           {this.state.error && <p>{this.state.error}</p>}
           <form onSubmit={this.onSubmit}>
           <TextField
